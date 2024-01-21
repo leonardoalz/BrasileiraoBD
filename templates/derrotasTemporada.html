@@ -1,0 +1,14 @@
+<!doctype html>
+<title>Critérios por temporada</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+  <a href="/">Voltar</a>
+</nav>
+<section class="content">
+
+    {% block content %}
+    <h1>O clube {{ nome_clube }} obteve {{ resultado.num }} 
+        {% if criterio == 'Empate' %}empates{% elif criterio == 'Ganhou' %}vitórias{% elif criterio == 'Perdeu' %}derrotas{% endif %}
+        durante a temporada de {{ temporada }}.</h1>
+    {% endblock %}
+    

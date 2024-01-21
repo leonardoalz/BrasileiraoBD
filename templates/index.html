@@ -1,0 +1,183 @@
+<!doctype html>
+<title>BD Brasileirão</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<section class="content">
+
+{% block content %}
+<h1>Base de dados do Campeonato Brasileiro de Futebol ⚽</h1>
+
+<h2>Sobre</h2>
+<p>Bem-vindo(a) à nossa plataforma dedicada à compreensão das relações presentes no Campeonato Brasileiro de Futebol. A partir de uma base de dados criada por nós, disponibilizamos os dados referentes aos clubes, estádios, localidades, partidas, resultados, pontos dos clubes, rodadas e temporada.
+<a href="https://docs.python.org/3/library/sqlite3.html">sqlite3</a>,
+<a href="https://flask.palletsprojects.com">Flask</a>, e
+<a href="https://jinja.palletsprojects.com">Jinja</a>.
+</p>
+
+<h2>Algumas estatísticas da base de dados</h2>
+<table>
+<tr>
+    <th>Itens</th>
+    <th>Quantidade</th>
+</tr>
+<tr>
+    <td>Total Clubes</td>
+    <td>{{ stats.total_clubes }}</td>
+</tr>
+<tr>
+    <td>Total Estádios</td>
+    <td>{{ stats.total_estadios }}</td>
+</tr>
+<tr>
+    <td>Total Partidas</td>
+    <td>{{ stats.total_partidas }}</td>
+</tr>
+<tr>
+    <td>Total de Rodadas</td>
+    <td>{{ stats.total_rodadas }}</td>
+</tr>
+<tr>
+    <td>Total de Temporadas</td>
+    <td>{{ stats.total_temporadas }}</td>
+</tr>
+<tr>
+    <td>Ano de Fundação do Clube mais antigo</td>
+    <td>{{ stats.ano_fundacao_antigo }}</td>
+</tr>
+<tr>
+    <td>Maior número de Golos de um time em uma partida</td>
+    <td>{{ stats.max_gols_clube_partida }}</td>
+</tr>
+<tr>
+    <td>Maior números de Golos em uma unica partida</td>
+    <td>{{ stats.max_gols_partida }}</td>
+</tr>
+</table>
+
+<h2>Saiba mais sobre nossa base de dados</h2>
+
+<h3>Clubes</h3>
+<p>
+   <a href="/clubes/">Listar tudo</a>
+</p>
+<p>Informação de um clube específico:
+    <form name="ClubeEspecifico" action="javascript:window.open('/clubes/'+document.forms['ClubeEspecifico'].elements['id'].value,'_self')">    
+        ID Clube: <input name="id" type="number" min="1" required value="1"/>
+        <input type="submit" value="Consultar"/>
+    </form>
+</p>
+
+<h3>Estádios</h3>
+<p>
+   <a href="/estadios/">Listar tudo</a>
+</p>
+<p>Informação de um estádio específico:
+    <form name="EstadioEspecifico" action="javascript:window.open('/estadios/'+document.forms['EstadioEspecifico'].elements['id'].value,'_self')">    
+        ID Estádio: <input name="id" type="number" min="1" required value="1"/>
+        <input type="submit" value="Consultar"/>
+    </form>
+</p>
+
+<h3>Resultados das Partidas</h3>
+<p>A tabela contém todas as entradas de partidas, com o número de golos, rodada e temporada explícitos:</p>
+<p>
+   <a href="/resultadoPartida/">Ver tabela</a>
+</p>
+
+<h3>Localidades</h3>
+<p>A tabela contém as cidades e suas respectivas siglas de estado:</p>
+<p>
+   <a href="/localidades/">Ver tabela</a>
+</p>
+
+<h3>Desempenho de um clube por temporada</h3>
+<p>Esta análise permite selecionar um determinado clube, uma determinada temporada e um critério de resultado de jogo (vitória, derrota ou empate), e irá retornar o desempenho desse critério do clube durante o período.</p>
+
+<form id="mostrarResultado" action="javascript:mostrarResultado()">
+    <label for="clube">Selecionar clube:</label>
+    <select id="clube" name="clube">
+        <option value="Palmeiras">Palmeiras</option>
+        <option value="Botafogo">Botafogo</option>
+        <option value="Grêmio">Grêmio</option>
+        <option value="Red Bull Bragantino">Red Bull Bragantino</option>
+        <option value="Atlético Mineiro">Atlético Mineiro</option>
+        <option value="Flamengo">Flamengo</option>
+        <option value="Athletico Paranaense">Athletico Paranaense</option>
+        <option value="Fluminense">Fluminense</option>
+        <option value="Cuiabá">Cuiabá</option>
+        <option value="São Paulo">São Paulo</option>
+        <option value="Corinthians">Corinthians</option>
+        <option value="Fortaleza">Fortaleza</option>
+        <option value="Internacional">Internacional</option>
+        <option value="Santos">Santos</option>
+        <option value="Vasco da Gama">Vasco da Gama</option>
+        <option value="Cruzeiro">Cruzeiro</option>
+        <option value="Bahia">Bahia</option>
+        <option value="Goiás">Goiás</option>
+        <option value="Coritiba">Coritiba</option>
+        <option value="América Mineiro">América Mineiro</option>
+        <option value="Ceará">Ceará</option>
+        <option value="Atlético Goianiense">Atlético Goianiense</option>
+        <option value="Avaí">Avaí</option>
+        <option value="Juventude">Juventude</option>
+        <option value="Chapecoense">Chapecoense</option>
+        <option value="CSA">CSA</option>
+        <option value="Paraná Clube">Paraná Clube</option>
+        <option value="Vitória">Vitória</option>
+        <option value="Ponte Preta">Ponte Preta</option>
+        <option value="Figueirense">Figueirense</option>
+        <option value="Santa Cruz">Santa Cruz</option>
+        <option value="Joinville">Joinville</option>
+        <option value="Criciúma">Criciúma</option>
+        <option value="Portuguesa">Portuguesa</option>
+        <option value="Náutico">Náutico</option>
+        <option value="Guarani">Guarani</option>
+        <option value="Grêmio Barueri">Grêmio Barueri</option>
+        <option value="Santo André">Santo André</option>
+        <option value="Ipatinga">Ipatinga</option>
+        <option value="América de Natal">América de Natal</option>
+        <option value="São Caetano">São Caetano</option>
+        <option value="Sport Recife">Sport Recife</option>
+
+    </select>
+
+    <br>
+
+    <label for="temporadas">Selecionar temporada:</label>
+    <select id="temporadas" name="temporadas">
+        <option value="2012">2012</option>
+        <option value="2013">2013</option>
+        <option value="2014">2014</option>
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+    </select>
+
+    <label for="criterio">Selecionar critério:</label>
+    <select id="criterio" name="criterio">
+        <option value="Empate">Empate</option>
+        <option value="Ganhou">Vitória</option>
+        <option value="Perdeu">Derrota</option>
+    </select>
+
+    <br>
+
+    <button type="button" onclick="mostrarResultado()">Mostrar resultado</button>
+</form>
+
+<script>
+    function mostrarResultado() {
+        var clube = document.getElementById("clube").value;
+        var temporadas = document.getElementById("temporadas").value;
+        var criterio = document.getElementById("criterio").value;
+
+        window.open('/derrotasTemporada/' + clube + '/' + temporadas + '/' + criterio, '_self');
+    }
+</script>
+
+{% endblock %}

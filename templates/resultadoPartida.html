@@ -1,0 +1,29 @@
+<!doctype html>
+<title>Resultados</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+  <a href="/">Voltar</a>
+</nav>
+<section class="content">
+
+{% block content %}
+<h1>Resultados das Partidas</h1>
+<table>
+  <tr>
+    <th>Clube</th>
+    <th>Golos</th>
+    <th>Resultado</th>
+    <th>Rodada</th>
+    <th>Temporada</th>
+  </tr>
+  {% for info in resultados %}
+  <tr>
+    <td><a href="/clubes/{{ info['ID_Clube'] }}">{{ info['Clube'] }}</a></td>
+    <td>{{ info['Golos'] }}</td>
+    <td>{{ info['Resultado_Pontos'] }}</td>
+    <td>{{ ((info['ID_Partida'] - 1) % (38 * 10) // 10) + 1 }}</td>
+    <td>{{ ((info['ID_Partida'] - 1) // 380) + 2012 }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

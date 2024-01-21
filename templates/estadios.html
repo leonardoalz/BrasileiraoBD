@@ -1,0 +1,30 @@
+<!doctype html>
+<title>Estádios</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+  <a href="/">Voltar</a>
+</nav>
+<section class="content">
+{% block content %}
+<h1>Informação dos estádios</h1>
+<table>
+  <tr>
+    <th>
+      <b>Nome</b>
+    </th>
+    <th>
+      <b>Localidade</b>
+    </th>
+  </tr>
+  {% for estadio in estadios %}
+  <tr>
+    <td>
+      <a href="/estadios/{{ estadio['ID_Estadio'] }}">{{ estadio['Nome_Estadio'] }}</a>
+    </td>
+    <td>
+      {{ estadio.ID_Localidade }}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}
