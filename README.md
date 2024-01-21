@@ -1,10 +1,10 @@
 # BrasileiraoDB
 
-I.	O universo escolhido consiste nas informações dos jogos das temporadas do Campeonato Brasileiro de Futebol a partir de 2012, primeiro ano das classificações dos pontos corridos, até hoje (final da temporada de 2023). 
-II.	Fonte dos dados utilizada:
-https://www.cbf.com.br/futebol-brasileiro/competicoes/campeonato-brasileiro-serie-a/2023
-III.	Método de obtenção dos dados: WebScraping com Python
-IV.	A estrutura da base de dados foi concebida para armazenar informações em sete tabelas distintas, representando dados estáticos e dinâmicos:
+**I.**	O universo escolhido consiste nas informações dos jogos das temporadas do Campeonato Brasileiro de Futebol a partir de 2012, primeiro ano das classificações dos pontos corridos, até hoje (final da temporada de 2023). <br><br>
+**II.**	Fonte dos dados utilizada:
+https://www.cbf.com.br/futebol-brasileiro/competicoes/campeonato-brasileiro-serie-a/2023<br><br>
+**III.**	Método de obtenção dos dados: WebScraping com Python<br><br>
+**IV.**	A estrutura da base de dados foi concebida para armazenar informações em sete tabelas distintas, representando dados estáticos e dinâmicos:
 
 Clubes
           ID_Clube (PK)
