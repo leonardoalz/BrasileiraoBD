@@ -1,6 +1,6 @@
 # Base de dados do Campeonato Brasileiro de Futebol
 
-``` Para que consiga executar a aplicação, leia o final da página e siga as instruções. ```
+``` A base de dados pode ser visualizada inteiramente em um software adequado para tal. Para que consiga executar a aplicação, leia o final da página e siga as instruções. ```
 <br><br>
 **I.**	O universo escolhido consiste nas informações dos jogos das temporadas do Campeonato Brasileiro de Futebol a partir de 2012, primeiro ano das classificações dos pontos corridos, até hoje (final da temporada de 2023). <br><br>
 **II.**	Fonte dos dados utilizada:
