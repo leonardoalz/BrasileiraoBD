@@ -6,43 +6,43 @@ https://www.cbf.com.br/futebol-brasileiro/competicoes/campeonato-brasileiro-seri
 **III.**	Método de obtenção dos dados: WebScraping com Python<br><br>
 **IV.**	A estrutura da base de dados foi concebida para armazenar informações em sete tabelas distintas, representando dados estáticos e dinâmicos:
 
-Clubes
-          ID_Clube (PK)
-          Nome
-          Ano_Fundacao
-          Apelido
-          Mascote
-          ID_Estadio (FK ) que referencia Estadios (ID_Estadio)
-
-Estadios
-          ID_Estadio (PK)
-          Nome_Estadio
-          Apelido
-         ID_Localidade (FK) que referencia Localidades (ID_Localidade)
-         Capacidade
-
-InfoPartida
-         ID_Partida (PK)
-         ID_Rodada (FK) que referencia RodadaTemporada (ID_Rodada)
-         ID_Estadio (FK) que referencia Estadios (ID_Estadio)
-
-Localidades
-         ID_Localidade (PK)
-         Cidade
-         Estadio
-
-Pontos
-         ID_Pontos (PK)
-         Resultado_Pontos
-
-ResultadoPartida
-         ID_Partida (PK) e (FK) que referencia InfoPartida (ID_Partida)
-         ID_Clube (PK) e (FK) que referencia Clubes (ID_Clube)
-         Golos
-         Pontos (FK) que referencia Pontos (ID_Pontos)
-         CasaFora
-
-RodadaTemporada
-         ID_Rodada (PK)
-         Rodada
-         Temporada
+Clubes<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID_Clube (PK)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nome<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ano_Fundacao<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Apelido<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mascote<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID_Estadio (FK ) que referencia Estadios (ID_Estadio)<br>
+<br>
+Estadios<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID_Estadio (PK)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nome_Estadio<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Apelido<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID_Localidade (FK) que referencia Localidades (ID_Localidade)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Capacidade<br>
+<br>
+InfoPartida<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID_Partida (PK)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID_Rodada (FK) que referencia RodadaTemporada (ID_Rodada)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID_Estadio (FK) que referencia Estadios (ID_Estadio)<br>
+<br>
+Localidades<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID_Localidade (PK)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cidade<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Estadio<br>
+<br>
+Pontos<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID_Pontos (PK)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resultado_Pontos<br>
+<br>
+ResultadoPartida<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID_Partida (PK) e (FK) que referencia InfoPartida (ID_Partida)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID_Clube (PK) e (FK) que referencia Clubes (ID_Clube)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Golos<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pontos (FK) que referencia Pontos (ID_Pontos)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CasaFora<br>
+<br><br>
+RodadaTemporada<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID_Rodada (PK)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rodada<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Temporada
