@@ -1,7 +1,7 @@
 # Base de dados do Campeonato Brasileiro de Futebol
 
-> Para que consiga fazer rodar a aplicação, leia o final da página e siga as instruções.
-
+``` Para que consiga executar a aplicação, leia o final da página e siga as instruções. ```
+<br><br>
 **I.**	O universo escolhido consiste nas informações dos jogos das temporadas do Campeonato Brasileiro de Futebol a partir de 2012, primeiro ano das classificações dos pontos corridos, até hoje (final da temporada de 2023). <br><br>
 **II.**	Fonte dos dados utilizada:
 https://www.cbf.com.br/futebol-brasileiro/competicoes/campeonato-brasileiro-serie-a/2023<br><br>
@@ -56,3 +56,11 @@ RodadaTemporada<br>
 <br><br>
 ## Modelo UML:<br>
 ![UML](https://github.com/leonardoalz/BrasileiraoDB/assets/90292319/df2226df-b069-4ac3-852f-9affe1eebc86)
+<br><br>
+## Como executar a aplicação:<br>
+**I.** Abra o CMD e digite "pip install flask".<br>
+**II.** Execute o "server.py" e entre no endereço gerado pelo servidor local.<br><br>
+### Deverá ser exibida a seguinte página:<br>
+![Captura da Web_21-1-2024_192511_127 0 0 1](https://github.com/leonardoalz/BrasileiraoDB/assets/90292319/26eeb2dd-688c-4d01-a5da-a8353710848c)
+
+
